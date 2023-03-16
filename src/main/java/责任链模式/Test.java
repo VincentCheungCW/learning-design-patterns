@@ -1,7 +1,7 @@
 package 责任链模式;
 
-import JDK动态代理.Dj;
-import JDK动态代理.DjImpl;
+import 动态代理.JDK动态代理.Dj;
+import 动态代理.JDK动态代理.DjImpl;
 import 拦截器.InvocationHandlerImpl;
 
 /**

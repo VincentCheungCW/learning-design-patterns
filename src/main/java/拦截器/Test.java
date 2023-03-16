@@ -1,7 +1,7 @@
 package 拦截器;
 
-import JDK动态代理.Dj;
-import JDK动态代理.DjImpl;
+import 动态代理.JDK动态代理.Dj;
+import 动态代理.JDK动态代理.DjImpl;
 
 /**
  * Created by Jiang on 2019-10-29.
