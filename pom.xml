@@ -4,8 +4,8 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>动态代理</groupId>
-    <artifactId>动态代理</artifactId>
+    <groupId>java-patterns</groupId>
+    <artifactId>java-patterns</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <dependencies>
@@ -13,6 +13,11 @@
             <groupId>org.mockito</groupId>
             <artifactId>mockito-all</artifactId>
             <version>1.9.5</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>23.6.1-jre</version>
         </dependency>
     </dependencies>
 
