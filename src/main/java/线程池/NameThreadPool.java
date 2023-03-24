@@ -2,7 +2,11 @@ package 线程池;
 
 import com.google.common.util.concurrent.ThreadFactoryBuilder;
 
+import java.util.List;
+import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Future;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.ThreadPoolExecutor;
@@ -31,6 +35,38 @@ public class NameThreadPool {
         TimeUnit.MINUTES,
         workQueue,
         threadFactory);
+    Future<?> future = threadPool.submit(new Runnable() {
+      @Override
+      public void run() {
+        // task1
+      }
+    });
+
+    try {
+      // future.get()方法会阻塞当前线程直到任务完成
+      Object o = future.get();
+    } catch (InterruptedException e) {
+      throw new RuntimeException(e);
+    } catch (ExecutionException e) {
+      throw new RuntimeException(e);
+    }
+
+    Future<?> future2 = threadPool.submit(new Callable<Integer>() {
+      @Override
+      public Integer call() throws Exception {
+        // task2
+        return 0;
+      }
+    });
+
+    threadPool.execute(new Runnable() {
+      @Override
+      public void run() {
+        // task3
+      }
+    });
+
+    List<Runnable> list = threadPool.shutdownNow();
 
   }
 }
