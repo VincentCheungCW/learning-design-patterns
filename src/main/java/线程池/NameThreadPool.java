@@ -3,6 +3,7 @@ package 线程池;
 import com.google.common.util.concurrent.ThreadFactoryBuilder;
 
 import java.util.List;
+import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
@@ -67,6 +68,7 @@ public class NameThreadPool {
     });
 
     List<Runnable> list = threadPool.shutdownNow();
+//    threadPool.shutdown();
 
   }
 }
